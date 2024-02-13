@@ -1,0 +1,14 @@
+version: '3'
+
+
+services:
+  web:
+  # build the service from from the directory web/dockerfile
+    build: ./web
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    build: ./db
